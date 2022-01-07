@@ -2,5 +2,73 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif, Courier, monospace;
+}
+
+:root{
+  --font: 'Nunito Sans', sans-serif, Courier, monospace;
+  --gray: #c9c9c9;
+  --dark: #202020;
+  --white: #FFF
+}
+
+body{
+  background-color: var(--dark);
+}
+.body-content--main{
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 35px;
+  text-align: center;
+}
+.body-content--title{
+  color: var(--white);
+  font: 600 1.5rem var(--font);
+  letter-spacing: .5rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.body-contnet-card{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 1rem;
+  column-gap: 1.2rem;
+}
+.body-content--card--listItems{
+  list-style: none;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px 1px var(--gray);
+  padding: 10px;
+  width: 18rem;
+  max-height: 13rem;
+}
+.body-content--card--img{
+  height: 150px;
+  width: 250px;
+}
+.body-content--categories{
+  color: var(--white);
+  font: 400 1.3rem var(--font);
+  margin: 10px auto;
+}
+.body-content-card--title{
+  font: 400 1rem var(--font);
+  color: var(--white);
+}
+.body-form--input{
+  color: var(--dark);
+  border: none;
+  border-radius: 10px;
+  font: 400 1.2rem var(--font);
+  height: 2.2rem;
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  width: 85%;
+  
 }
