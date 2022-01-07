@@ -1,27 +1,30 @@
-import React, { Fragment, useState } from "react";
+import React, {useState } from "react";
+import { AddCategories } from "./components/AddCategories";
+import { GiffGrid } from "./components/GiffGrid";
 
 
 const GifExpertApp = () => {
-
-    // const categories = ['One Punch', 'Samurai X', 'Dragon Ball Z']
-    const [categories, setCategories] = useState(['One Punch', 'Samurai X', 'Dragon Ball Z'])
+    const [categories, setCategories] = useState(['One Punch']);
     
-    const handAddCategory = () => {
-        setCategories([...categories, 'Marvel']);
-    }
     return (  
-        <Fragment>
-            <h2>GifExpert</h2>
+        <div className='body-content--main'>
+            <h2 className="body-content--title">GifExpert</h2>
+            <AddCategories
+                setCategories={setCategories}
+                categories={categories}    
+            />
             <hr />
-            <button onClick={handAddCategory}>Agregar</button>
             <ol>
                 { 
-                    categories.map((category, index) => {
-                        return <li key={index}>{ category }</li>
-                    })    
+                    categories.map((category) => (
+                        <GiffGrid
+                            key={category}
+                            category={category}     
+                        />
+                    ))    
                 }
             </ol>
-        </Fragment>
+        </div>
     );
 }
  
