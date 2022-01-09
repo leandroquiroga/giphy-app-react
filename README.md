@@ -12,7 +12,6 @@ Es una simple aplicacion creada con React.js y CSS3 como principales herramienta
 
 Este proyecto fue creado con: [Create React App](https://github.com/facebook/create-react-app).
 
-
 ## Available Scripts
 
 En el directorio del proyecto puedes correr las sigueintes scrips:
