@@ -10,6 +10,10 @@ Es una simple aplicacion creada con React.js y CSS3 como principales herramienta
 
 
 
+https://user-images.githubusercontent.com/80013958/148706468-583d26cf-b43e-4a2d-beb1-a7cf4ac0b19e.mp4
+
+
+
 Este proyecto fue creado con: [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
