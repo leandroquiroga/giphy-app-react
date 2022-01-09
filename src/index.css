@@ -58,7 +58,7 @@ body{
 }
 
 .body-contnet--imgPreview{
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
   padding: 15px;
 }
@@ -75,6 +75,7 @@ body{
   column-gap: 1.2rem;
   place-content: center;
   place-items: center;
+  margin-top: 50px;
   padding: 15px;
   border-bottom: 1px solid var(--gray);
 }
@@ -265,4 +266,10 @@ body{
 @keyframes sk-circleFadeDelay {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; } 
+}
+
+@media only screen and (max-width: 720px){
+  .body-contnet--imgPreview{
+    width: 90%;
+  }
 }
