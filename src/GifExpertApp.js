@@ -1,29 +1,26 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
+import logo from './static/gif-icon--search.svg';
 import { AddCategories } from "./components/AddCategories";
-import { GiffGrid } from "./components/GiffGrid";
+import { GiffPageInit } from './components/GiffPageInit';
+import { GiffListItems } from './components/GiffListItems';
+
 
 
 const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['One Punch']);
-    
+    const [categories, setCategories] = useState([]);
     return (  
         <div className='body-content--main'>
-            <h2 className="body-content--title">GifExpert</h2>
-            <AddCategories
-                setCategories={setCategories}
-                categories={categories}    
-            />
-            <hr />
-            <ol>
-                { 
-                    categories.map((category) => (
-                        <GiffGrid
-                            key={category}
-                            category={category}     
-                        />
-                    ))    
-                }
-            </ol>
+            <AddCategories setCategories={setCategories} />
+            {
+                (categories.length === 0) ?
+                    <GiffPageInit
+                        logo={logo}
+                        message='Busca tu Giff favorito'
+                    /> :
+                    <GiffListItems
+                        categories={categories}
+                    />     
+            }
         </div>
     );
 }
