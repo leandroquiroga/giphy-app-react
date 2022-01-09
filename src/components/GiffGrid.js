@@ -1,38 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { Fragment } from 'react/cjs/react.production.min';
+import { useFetchGiffs } from '../hooks/useFetchGiff';
 import { GiffItems } from './GiffItems';
+import SpinnerGiff from './SpinnerGiff';
+
 
 export const GiffGrid = ({ category }) => {
 
-    const [images, setImages] = useState([]);
-    const fetchGiff = async() => {
-        const url = 'https://api.giphy.com/v1/gifs/search?q=Marvel&limit=10&api_key=tsJ9T1uzG8gsBfTIqEsyzLXJxs1njsMv';
-        const response = await fetch(url);
-        const { data } = await response.json();
-        const giffs = data.map(img => {
-            return (
-                {
-                    id: img.id,
-                    title: img.title,
-                    url: img.images?.downsized.url
-               }
-           )
-        })
-        
-        console.log(giffs);
-
-        setImages(giffs)
-    }
-
-    useEffect(() => { 
-        fetchGiff();
-    }, [])
+    const { data: images, loading } = useFetchGiffs(category);
+    console.log(images)
 
     return (
         
         <Fragment>
-            <h3 className='body-content--categories'>{category}</h3>
-            <div className='body-contnet-card'>
+            {loading && <SpinnerGiff />}
+            <hr />
+            <h3 className='body-content--categories animate__animated animate__zoomIn'>{category}</h3>
+            <div className='body-contnet-card animate__animated animate__zoomIn'>
                 {
                     images.map((img) => (
                         <GiffItems
@@ -41,7 +25,7 @@ export const GiffGrid = ({ category }) => {
                         />
                     ))
                 }
-            </div>
+            </div> 
         </Fragment>
     )
 }
