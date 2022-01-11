@@ -6,8 +6,8 @@ import { GiffListItems } from './components/GiffListItems';
 
 
 
-const GifExpertApp = () => {
-    const [categories, setCategories] = useState([]);
+const GifExpertApp = ({defaultCategories = []}) => {
+    const [categories, setCategories] = useState(defaultCategories);
     return (  
         <div className='body-content--main'>
             <AddCategories setCategories={setCategories} />
