@@ -32,6 +32,13 @@ $ npm run build
 $ npm run start
 
 ```
+# Testing 👨🏻‍🔬
+
+Los tets se encuentran en la carpeta src y esta compuesto segun su fichero de la carpeta raiz, los teste fueron realizados con:
+* Jest
+* Enzyme
+* React Hooks
+* 
 # Contacto 📫
 - [Linkedin](https://www.linkedin.com/in/leanquiroga95/)
 - [Frontend Mentor](https://www.frontendmentor.io/profile/leandroquiroga)
