@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './../node_modules/animate.css/animate.css'
-
 import reportWebVitals from './reportWebVitals';
 import GifExpertApp from './GifExpertApp';
 
