@@ -3,29 +3,31 @@ import { Fragment } from 'react/cjs/react.production.min';
 import { useFetchGiffs } from '../hooks/useFetchGiff';
 import { GiffItems } from './GiffItems';
 import SpinnerGiff from './SpinnerGiff';
+import PropTypes from 'prop-types';
 
 
 export const GiffGrid = ({ category }) => {
 
-    const { data: images, loading } = useFetchGiffs(category);
-    console.log(images)
-
-    return (
-        
+    const { data:images, loading } = useFetchGiffs(category);
+    
+    return (    
         <Fragment>
             {loading && <SpinnerGiff />}
-            <hr />
-            <h3 className='body-content--categories animate__animated animate__zoomIn'>{category}</h3>
-            <div className='body-contnet-card animate__animated animate__zoomIn'>
+            <h3 className='body-content--categories animate__animated animate__zoomIn'>{ `Buscando.. ${category }`}</h3>
+            { <div className='body-contnet-card animate__animated animate__zoomIn'>
                 {
                     images.map((img) => (
                         <GiffItems
-                            key={img.id}    
-                            {...img} 
+                            key={img.id}
+                            {...img}
                         />
                     ))
                 }
-            </div> 
+            </div> }
         </Fragment>
-    )
+    );
+};
+
+GiffGrid.prototype = {
+    category: PropTypes.string.isRequired,
 }
